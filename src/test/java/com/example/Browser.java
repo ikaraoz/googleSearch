@@ -12,7 +12,7 @@ public class Browser {
             System.setProperty("webdriver.gecko.driver", "drivers/geckodriver");
             driver = new FirefoxDriver();
         } else if (browserType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver81");
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
             driver = new ChromeDriver();
         }
 

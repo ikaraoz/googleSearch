@@ -11,6 +11,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+
 public class MyStepdefs {
 
     WebDriver driver;
@@ -45,13 +47,19 @@ public class MyStepdefs {
         // Google's search is rendered dynamically with JavaScript
         // Wait for the page to load timeout after ten seconds
 
-        rp =new ResultsPage(driver);
+        rp = new ResultsPage(driver);
         rp.verifyTitle(titleStartsWith);
 //        new WebDriverWait(driver, 10L).until(new ExpectedCondition<Boolean>() {
 //            public Boolean apply(WebDriver d) {
 //                return d.getTitle().toLowerCase().startsWith(titleStartsWith);
 //            }
 //        });
+        List<WebElement> cities = driver.findElements(By.id("typeaheadList"));
+        for (WebElement e : cities) {
+            System.out.println(e);
+
+        }
+
     }
 
     @After()
